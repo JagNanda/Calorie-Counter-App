@@ -1,0 +1,26 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Helvetics, Arial, sans-serif;
+    font-size: $m-size;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.btn:disabled {
+    cursor: initial;
+}
+
+.is-active {
+    font-weight: bold;
+    margin-right: 3rem;
+    color: orange;
+}
+
+a {
+    margin-right: 3rem;
+}
