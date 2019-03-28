@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MealForm from './MealForm';
-import { addMeal } from '../actions/meals';
+import { addMealFirebase } from '../actions/meals';
 import { toggleShowSelectMyFoodItemTrue } from '../actions/filter';
 import MyFoodList from './MyFoodList';
 
@@ -18,7 +18,7 @@ class AddMeals extends React.Component {
                 <h1>Add a Meal</h1>
                 <MyFoodList/>
                 <MealForm onSubmit={(meal) => {
-                    this.props.dispatch(addMeal(meal));
+                    this.props.dispatch(addMealFirebase(meal));
                     this.props.history.push('/');
                 }}/>
             </div>

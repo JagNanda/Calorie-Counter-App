@@ -6,6 +6,7 @@ import { getVisibleMeals } from '../selectors/meals';
 function MealList(props) {
     return(
         <div>
+            <h3>Meals Eaten Today</h3>
             {props.meals.map((meal) => (
                 <MealListItem
                     {...meal}

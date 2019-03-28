@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import moment from 'moment';
 
 class MealForm extends React.Component {
 
@@ -37,7 +38,7 @@ class MealForm extends React.Component {
                 protein: parseInt(this.state.protein),
                 fat: parseInt(this.state.fat),
                 carbs: parseInt(this.state.carbs),
-                dateAdded: this.state.dateAdded
+                dateAdded: moment(this.state.dateAdded).valueOf()
             });
             this.setState({
                 mealName: '',

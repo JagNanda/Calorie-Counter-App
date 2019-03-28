@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MyFoodListItem from './MyFoodListItem';
-import { addMeal } from '../actions/meals';
+import { addMealFirebase } from '../actions/meals';
 import { withRouter } from 'react-router-dom';
 
 function MyFoodList(props) {
@@ -14,7 +14,7 @@ function MyFoodList(props) {
                     showSelect={props.showSelect}
                     key={myFood.id}
                     onSelect={() => {
-                        props.dispatch(addMeal(myFood));
+                        props.dispatch(addMealFirebase(myFood));
                         props.history.push('/');
                     }}
                 />
