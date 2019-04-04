@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import { database } from '../firebase/firebase';
 
 function addMeal(meal) {
@@ -9,9 +8,10 @@ function addMeal(meal) {
 }
 
 function addMealFirebase(meal) {
-    return function(dispatch) {
+    return function(dispatch, getState) {
         const {mealName, calories, protein, fat, carbs, dateAdded} = meal;
-        database.ref('meals').push({mealName, calories, protein, fat, carbs, dateAdded}).then((ref) => {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/meals`).push({mealName, calories, protein, fat, carbs, dateAdded}).then((ref) => {
             dispatch(addMeal({
                 id: ref.key,
                 ...meal
@@ -21,9 +21,10 @@ function addMealFirebase(meal) {
 }
 
 function fetchMealsFirebase() {
-    return function(dispatch) {
+    return function(dispatch,getState) {
         const meals = [];
-        return database.ref('meals').once('value').then((snapshot) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/meals`).once('value').then((snapshot) => {
             snapshot.forEach((childSnap) => {
                 meals.push({
                     id: childSnap.key,
@@ -45,8 +46,9 @@ function setStartingMeals(meals) {
 }
 
 function removeMealFirebase(id) {
-    return function(dispatch) {
-        database.ref(`meals/${id}`).remove();
+    return function(dispatch,getState) {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/meals/${id}`).remove();
         dispatch(removeMeal(id));
     }
 }

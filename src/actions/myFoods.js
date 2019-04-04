@@ -8,8 +8,9 @@ function addMyFood(meal) {
 }
 
 function addMyFoodFirebase(meal) {
-    return function(dispatch) {
-        database.ref('myFoods').push(meal).then((ref) => {
+    return function(dispatch, getState) {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/myFoods`).push(meal).then((ref) => {
             dispatch(addMyFood({
                 id: ref.key,
                 ...meal
@@ -19,9 +20,10 @@ function addMyFoodFirebase(meal) {
 }
 
 function fetchMyFoods() {
-    return function(dispatch) {
+    return function(dispatch, getState) {
         const myFoods = [];
-        return database.ref('myFoods').once('value').then((snapshot) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/myFoods`).once('value').then((snapshot) => {
             snapshot.forEach((childSnap) => {
                 myFoods.push({
                     id: childSnap.key,
@@ -41,8 +43,9 @@ function removeMyFood(id) {
 }
 
 function removeMyFoodFirebase(id){
-    return function(dispatch) {
-        database.ref(`myFoods/${id}`).remove().then(() => {
+    return function(dispatch, getState) {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/myFoods/${id}`).remove().then(() => {
             dispatch(removeMyFood(id));
         })
     }

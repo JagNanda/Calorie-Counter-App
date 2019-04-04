@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import mealReducer from '../reducers/meals';
 import filterReducer from '../reducers/filter';
 import myFoodsReducer from '../reducers/myFoods';
+import authReducer from '../reducers/auth';
 import thunk from 'redux-thunk';
 
 function configureStore() {
@@ -10,7 +11,8 @@ function configureStore() {
         combineReducers({
             meals: mealReducer,
             filter: filterReducer,
-            myFoods: myFoodsReducer
+            myFoods: myFoodsReducer,
+            auth: authReducer
         }),
         applyMiddleware(thunk)
     );
