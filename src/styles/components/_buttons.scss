@@ -1,0 +1,36 @@
+.btn {
+    background-color: $blue;    
+    border: none;
+    color: white;
+    font-size: $font-size-m;
+    padding: $m-size;
+    text-decoration: none;
+}
+
+    .btn--add-meal {
+        display: inline-block;
+        font-size: $font-size-m;
+        font-weight: 300;
+        padding: $s-size ;
+        text-align: center;
+    }
+
+    .btn--login {
+        width: 80%;
+    }
+
+    .btn--link {
+        background: none;
+        font-size: $font-size-s;
+        padding: 0;
+    }
+
+    .btn--remove {
+        @extend .btn--link;
+        color: $grey;
+    }
+
+    .btn--select {
+        @extend .btn--link;
+        color: $blue;
+    }

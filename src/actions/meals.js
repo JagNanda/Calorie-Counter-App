@@ -9,9 +9,8 @@ function addMeal(meal) {
 
 function addMealFirebase(meal) {
     return function(dispatch, getState) {
-        const {mealName, calories, protein, fat, carbs, dateAdded} = meal;
         const uid = getState().auth.uid;
-        database.ref(`users/${uid}/meals`).push({mealName, calories, protein, fat, carbs, dateAdded}).then((ref) => {
+        database.ref(`users/${uid}/meals`).push(meal).then((ref) => {
             dispatch(addMeal({
                 id: ref.key,
                 ...meal

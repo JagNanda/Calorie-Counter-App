@@ -1,0 +1,16 @@
+.hidden {
+    display: none;
+}
+
+
+.hide-on-desktop {
+    @media (min-width: $desktop-breakpoint + 0.01rem) {
+        display: none;
+    }
+}
+
+.hide-on-mobile {
+    @media (max-width: $desktop-breakpoint) {
+        display: none;
+    }
+}

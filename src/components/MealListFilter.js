@@ -30,9 +30,10 @@ class MealListFilter extends React.Component {
     
     render() {
         return (
-            <div>
+            <div className="datePicker">
                 <SingleDatePicker
                     date={this.props.filterDate}
+                    displayFormat="MMMM DD YYYY"
                     onDateChange={this.onDateChange}
                     focused={this.state.focused}
                     onFocusChange={this.onFocusChange}

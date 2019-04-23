@@ -6,7 +6,6 @@ import PublicRoute from './PublicRoute';
 import Dashboard from '../components/Dashboard';
 import AddMeals from '../components/AddMeals';
 import NotFoundPage from '../components/NotFoundPage';
-import EditDayPage from '../components/EditDayPage';
 import MyFoods from '../components/MyFoods';
 import LoginPage from '../components/LoginPage';
 
@@ -20,7 +19,6 @@ const AppRouter = () => (
                     <PrivateRoute path='/dashboard' component={Dashboard}/>
                     <PrivateRoute path='/AddMeals' component={AddMeals}/>
                     <PrivateRoute path='/MyFoods' component={MyFoods}/>
-                    <PrivateRoute path='/EditDayPage/:id' component={EditDayPage}/>
                     <Route component={NotFoundPage}/>
             </Switch>
         </div>

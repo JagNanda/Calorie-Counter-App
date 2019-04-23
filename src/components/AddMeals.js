@@ -14,14 +14,23 @@ class AddMeals extends React.Component {
     
     render() {
         return (
-            <div>
-                <h1>Add a Meal</h1>
-                <MyFoodList/>
-                <MealForm onSubmit={(meal) => {
-                    this.props.dispatch(addMealFirebase(meal));
-                    this.props.history.push('/');
-                }}/>
-            </div>
+           <div>
+                <div className="page-header">
+                    <div className="content-container">
+                        <h1>Add a Meal</h1>
+                    </div>
+                </div>
+                    <div className="content-container">
+                        <MyFoodList/>
+                        <MealForm 
+                            submitBtnText="Add a New Meal"
+                            onSubmit={(meal) => {
+                                this.props.dispatch(addMealFirebase(meal));
+                                this.props.history.push('/');
+                            }}
+                        />
+                    </div>
+           </div>
         )
     }
 }

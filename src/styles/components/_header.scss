@@ -1,0 +1,43 @@
+.header {
+    background-color: $blue;
+}
+
+    .header-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .header-nav {
+            width: 16rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .header-nav__link {
+                color: white;
+                text-decoration: none;
+            }
+
+                .header-nav__link--active {
+                    font-weight: bold;
+                }
+
+        .header-title {
+            text-decoration: none;
+            color: white;   
+
+            h1 {
+                margin: 0;
+            }
+        }
+        
+
+    @media (min-width: $desktop-breakpoint) {
+        .header-content {
+            align-items: flex-top;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }

@@ -1,0 +1,11 @@
+.meal-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    margin-top: $m-size;
+    padding: $xl-size;
+
+    > * {
+        margin-bottom: $s-size;
+    }
+}

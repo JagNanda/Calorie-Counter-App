@@ -7,7 +7,7 @@ import { fetchMealsFirebase } from './actions/meals';
 import {fetchMyFoods} from './actions/myFoods';
 import {firebase} from './firebase/firebase';
 import {history} from './routes/AppRouter';
-import {login} from './actions/auth';
+import {login, logout} from './actions/auth';
 import './firebase/firebase';
 import './styles/styles.scss';
 import 'normalize.css/normalize.css';
@@ -38,6 +38,8 @@ firebase.auth().onAuthStateChanged((user) => {
     }
     else {
         renderApp();
+        store.dispatch(logout());
+        history.push('/');
     }
 })
 

@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
 }
@@ -5,7 +9,10 @@ html {
 body {
     font-family: Helvetics, Arial, sans-serif;
     font-size: $m-size;
+    color: $dark-grey;
+    line-height: 1.6;
 }
+
 
 .btn {
     cursor: pointer;
@@ -15,12 +22,3 @@ body {
     cursor: initial;
 }
 
-.is-active {
-    font-weight: bold;
-    margin-right: 3rem;
-    color: orange;
-}
-
-a {
-    margin-right: 3rem;
-}

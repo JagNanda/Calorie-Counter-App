@@ -3,8 +3,12 @@ import {firebase} from '../firebase/firebase';
 
 function LoginPage() {
     return (
-        <div>
-            <button onClick={startLogin}>Login</button>
+        <div className="login-layout">
+            <div className="login-layout__box">
+                <h1 className="login-layout__title">Calorie Counter</h1>
+                <p className="login-layout__subtitle">Keep track of your daily meals and calories</p>
+                <button className="btn btn--login" onClick={startLogin}>Login with Google</button>
+            </div>
         </div>
     )
 }

@@ -5,8 +5,12 @@ import { getVisibleMeals } from '../selectors/meals';
 
 function MealList(props) {
     return(
-        <div>
-            <h3>Meals Eaten Today</h3>
+        <div className="meal-list">
+            <div className="meal-list__header">
+                <h2 className="meal-list__title">Meals Eaten</h2>
+                <div className="meal-list-item__calories-label">Calories</div>
+            </div>
+            {props.meals < 1 && <div className="meal-list-item__container">No meals eaten</div>}
             {props.meals.map((meal) => (
                 <MealListItem
                     {...meal}

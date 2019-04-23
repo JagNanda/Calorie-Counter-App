@@ -1,14 +1,22 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 import {firebase} from '../firebase/firebase';
 
 function Header() {
     return (
-        <div>
-            <NavLink to="/" activeClassName='is-active' exact={true}>Home</NavLink>
-            <NavLink to='/MyFoods' activeClassName='is-active' exact={true}>My Foods</NavLink>
-            <button onClick={logout}>Logout</button>
-        </div>
+        <header className="header">
+            <div className="content-container">
+                <div className="header-content">
+                    <Link className="header-title" to="/"  exact='true'>
+                        <h1>Calorie Counter</h1>
+                    </Link>
+                   <div className="header-nav">
+                        <NavLink to='/MyFoods' className="header-nav__link" activeClassName='header-nav__link--active' exact={true}>My Foods</NavLink>
+                        <button className='btn btn--link' onClick={logout}>Logout</button>
+                   </div>
+                </div>
+            </div>
+        </header>
     )
 }
 

@@ -29,17 +29,25 @@ class MyFoods extends React.Component {
     render() {
         return (
             <div>
-                <h1>My Foods</h1>
-                <button onClick={this.handleToggleForm}>Add a Favourite Meal</button>
-                <div className={this.state.showForm ? 'myFoods' : 'hidden'}>
-                    <MealForm
-                        onSubmit={(meal) => {
-                            this.props.dispatch(addMyFoodFirebase(meal));
-                            this.handleToggleForm();
-                        }}
-                    />
+                <div className="page-header">
+                    <div className="content-container">                        
+                        <h1 className="page-header__title">My Foods</h1>
+                        <button className="btn btn--add-meal" onClick={this.handleToggleForm}>Add a Favourite Meal</button>
+                    </div>
                 </div>
-                <MyFoodList/>
+                <div className="content-container">
+                    <div className={this.state.showForm ? '' : 'hidden'}>
+                        <MealForm
+                            onSubmit={(meal) => {
+                                const {calories, carbs, fat, mealName, protein} = meal;
+                                const mealData = {calories, carbs, fat, mealName, protein};
+                                this.props.dispatch(addMyFoodFirebase(mealData));
+                                this.handleToggleForm();
+                            }}
+                        />
+                    </div>
+                    <MyFoodList/>
+                </div>
             </div>
         )
     }
