@@ -10,7 +10,7 @@ function MealListItem({mealName, calories, carbs, fat, protein, id, dispatch}) {
                 <div className="meal-list-item__calories">{calories}</div>
             </div>
             <div className="meal-list-item__macros">
-                <span>Carbs: {carbs}</span> <span>Fat: {fat}</span> <span>Protein: {protein}</span>
+                <span>Carbs: {carbs}g</span> <span>Fat: {fat}g</span> <span>Protein: {protein}g</span>
             </div>
             <button className="btn btn--remove" onClick={() => dispatch(removeMealFirebase(id))}>Remove</button>
         </div>

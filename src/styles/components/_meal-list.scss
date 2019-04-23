@@ -20,6 +20,7 @@
             display: inline-block;
             font-weight: 500;
             font-size: $font-size-m;
+            padding-right: $xs-size;
         }
 
     .meal-list-item__container {
@@ -37,6 +38,7 @@
 
         .meal-list-item__calories {
             font-weight: 700;
+            padding-right: $xs-size;
         }
 
         .meal-list-item__macros span { 

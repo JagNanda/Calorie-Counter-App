@@ -83,7 +83,7 @@ class MealForm extends React.Component {
                     maxLength="3"
                     className="text-input"
                     name="fat"
-                    placeholder='fat'
+                    placeholder='Fat(g)'
                     onChange={this.handleInputChange}
                     value={this.state.fat} 
                 />
@@ -92,7 +92,7 @@ class MealForm extends React.Component {
                     maxLength="3"
                     className="text-input"
                     name="protein"
-                    placeholder='protein'
+                    placeholder='Protein(g)'
                     value={this.state.protein}
                     onChange={this.handleInputChange}
                 />
@@ -101,7 +101,7 @@ class MealForm extends React.Component {
                     maxLength="3"
                     className="text-input"
                     name="carbs"
-                    placeholder='carbohydrates'
+                    placeholder='Carbohydrates(g)'
                     value={this.state.carbs}
                     onChange={this.handleInputChange}
                 />
